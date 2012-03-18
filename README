@@ -32,6 +32,10 @@ plugins folder, and reload your plugins. Vault is required for Permissions to
 function. If Vault is detected, ModePoints will automatically switch to using
 Permissions. Simply give your users the permission "modepoints.use".
 
+For those who do not know, Vault is a plugin designed to link the many different
+permissions plugins with other plugins to allow them to check permissions. Vault
+can be found here: http://dev.bukkit.org/server-mods/vault/
+
 If at any point this plugin falls into a state of disrepair, feel free to contact
 me and ask for an update. Bug reports are always appreciated. Suggestions are
 also welcome; however this plugin was designed to be simple, so extravagant
