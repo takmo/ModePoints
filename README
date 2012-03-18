@@ -1,0 +1,53 @@
+/*
+ * Copyright (c) 2012 TechnoBulldog
+ *
+ * This software is provided 'as-is', without any express or implied
+ * warranty. In no event will the authors be held liable for any damages
+ * arising from the use of this software.
+ * 
+ * Permission is granted to anyone to use this software for any purpose,
+ * including commercial applications, and to alter it and redistribute it
+ * freely, subject to the following restrictions:
+ * 
+ *  1. The origin of this software must not be misrepresented; you must not
+ *  claim that you wrote the original software. If you use this software
+ *  in a product, an acknowledgment in the product documentation would be
+ *  appreciated but is not required.
+ *
+ *  2. Altered source versions must be plainly marked as such, and must not be
+ *  misrepresented as being the original software.
+ *
+ *  3. This notice may not be removed or altered from any source
+ *  distribution.
+ */
+
+Thank you for your interest in ModePoints!
+
+ModePoints is a simple and plugin that allows players to teleport using
+teleporters and waypoints. It functions entirely without commands and
+is compatible with permissions.
+
+Installation is very simple. Simply download ModePoints.jar, add it to your
+plugins folder, and reload your plugins. Vault is required for Permissions to
+function. If Vault is detected, ModePoints will automatically switch to using
+Permissions. Simply give your users the permission "modepoints.use".
+
+If at any point this plugin falls into a state of disrepair, feel free to contact
+me and ask for an update. Bug reports are always appreciated. Suggestions are
+also welcome; however this plugin was designed to be simple, so extravagant
+suggestions will likely be denied or ignored.
+
+The license above, as you may have guessed, it mostly a joke. I do not care
+what you do with this software, under the condition that you do not try
+to legally prosecute me for stealing "your" code.
+
+With that said, have fun!
+
+Contributors:
+
+TechnoBulldog - Programmer
+PatPatrson - Quality Assurance Testing
+
+Changelog:
+
+3/18/12 - Initial commit. Mostly tested, should work fine.
