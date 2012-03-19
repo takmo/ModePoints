@@ -28,13 +28,9 @@ teleporters and waypoints. It functions entirely without commands and
 is compatible with permissions.
 
 Installation is very simple. Simply download ModePoints.jar, add it to your
-plugins folder, and reload your plugins. Vault is required for Permissions to
-function. If Vault is detected, ModePoints will automatically switch to using
-Permissions. Simply give your users the permission "modepoints.use".
-
-For those who do not know, Vault is a plugin designed to link the many different
-permissions plugins with other plugins to allow them to check permissions. Vault
-can be found here: http://dev.bukkit.org/server-mods/vault/
+plugins folder, and reload your plugins. ModePoints is compatible with
+Permissions and automatically gives everyone access. If you would like to remove
+access from a specific player or group, remove the permission "modepoints.use"
 
 If at any point this plugin falls into a state of disrepair, feel free to contact
 me and ask for an update. Bug reports are always appreciated. Suggestions are
@@ -53,5 +49,7 @@ TechnoBulldog - Programmer
 PatPatrson - Quality Assurance Testing
 
 Changelog:
+
+3/18/12 - Removed the Vault dependency.
 
 3/18/12 - Initial commit. Mostly tested, should work fine.

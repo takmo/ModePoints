@@ -31,8 +31,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.HashMap;
 
-import net.milkbowl.vault.permission.Permission;
-
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -48,25 +46,16 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
-import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ModePoints extends JavaPlugin implements Listener {
 	
 	private Connection mSqlConnection;
-	private Permission mPermissions;
 	private HashMap<Location, Waypoint> mWaypointList;
 	
 	private void info(String info) { getServer().getLogger().info("ModePoints: " + info); }
 	
 	private void severe(String severe) { getServer().getLogger().severe("ModePoints: " + severe); }
-	
-	private void checkPermissions() {
-		if(getServer().getPluginManager().getPlugin("Vault") != null) {
-			mPermissions = ((RegisteredServiceProvider<Permission>)getServer().getServicesManager().getRegistration(Permission.class)).getProvider();
-			info("Vault plugin has been detected! Switching from \"no permissions\" to Vault permissions!");
-		}
-	}
 	
 	private void checkTable() {
 		if(mSqlConnection == null)
@@ -314,7 +303,6 @@ public class ModePoints extends JavaPlugin implements Listener {
 		load();
 		getServer().getPluginManager().registerEvents(this, this);
 		getServer().getScheduler().scheduleSyncRepeatingTask(this, new Runnable() { public void run() { save(); } }, 72000L, 72000L);
-		getServer().getScheduler().scheduleSyncDelayedTask(this, new Runnable() { public void run() { checkPermissions(); } }, 1L);
 		info("Enabled!");
 	}
 	
@@ -323,7 +311,7 @@ public class ModePoints extends JavaPlugin implements Listener {
 		if(e.isCancelled() || e == null || e.getBlock().getType() != Material.GLASS)
 			return;
 		if(mWaypointList.containsKey(e.getBlock().getLocation())) {
-			if(mPermissions != null && !mPermissions.has(e.getPlayer(), "modepoints.use")) {
+			if(!e.getPlayer().hasPermission("modepoints.use")) {
 				e.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to destroy this waypoint.");
 				e.setCancelled(true);
 				return;
@@ -344,7 +332,7 @@ public class ModePoints extends JavaPlugin implements Listener {
 				s.getLine(0).equalsIgnoreCase("-TELEPORTER-") ||
 				s.getLine(0).equalsIgnoreCase("[TELEPORT]") ||
 				s.getLine(0).equalsIgnoreCase("-TELEPORT-")) {
-			if(mPermissions != null && !mPermissions.has(e.getPlayer(), "modepoints.use")) {
+			if(!e.getPlayer().hasPermission("modepoints.use")) {
 				e.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to teleport.");
 				e.setCancelled(true);
 				return;
@@ -359,7 +347,7 @@ public class ModePoints extends JavaPlugin implements Listener {
 			return;
 		if(e.getLine(0).equalsIgnoreCase("[WAYPOINT]") ||
 				e.getLine(0).equalsIgnoreCase("-WAYPOINT-")) {
-			if(mPermissions != null && !mPermissions.has(e.getPlayer(), "modepoints.use")) {
+			if(!e.getPlayer().hasPermission("modepoints.use")) {
 				e.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to create waypoints.");
 				e.setCancelled(true);
 				return;
@@ -370,7 +358,7 @@ public class ModePoints extends JavaPlugin implements Listener {
 				e.getLine(0).equalsIgnoreCase("-TELEPORTER-") ||
 				e.getLine(0).equalsIgnoreCase("[TELEPORT]") ||
 				e.getLine(0).equalsIgnoreCase("-TELEPORT-")) {
-			if(mPermissions != null && !mPermissions.has(e.getPlayer(), "modepoints.use")) {
+			if(!e.getPlayer().hasPermission("modepoints.use")) {
 				e.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to teleport.");
 				e.setCancelled(true);
 				return;

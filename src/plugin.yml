@@ -1,3 +1,14 @@
 name: ModePoints
+version: 1.1
+description: A simple waypoint teleportation plugin.
+author: TechnoBulldog
+website: http://dev.bukkit.org/server-mods/modepoints/
 main: technobulldog.modepoints.ModePoints
-version: 1.0
+permissions:
+    modepoints.*:
+        description: Gives access to all ModePoints permissions.
+        children:
+            modepoints.use: true
+    modepoints.use:
+        description: Allows the player to use ModePoints.
+        default: true
