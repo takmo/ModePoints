@@ -9,6 +9,10 @@ permissions:
         description: Gives access to all ModePoints permissions.
         children:
             modepoints.use: true
+            modepoints.create: true
     modepoints.use:
         description: Allows the player to use ModePoints.
+        default: true
+    modepoints.create:
+        description: Allows the player to create and destroy waypoints.
         default: true

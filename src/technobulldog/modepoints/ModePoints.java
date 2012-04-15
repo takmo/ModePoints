@@ -311,7 +311,7 @@ public class ModePoints extends JavaPlugin implements Listener {
 		if(e.isCancelled() || e == null || e.getBlock().getType() != Material.GLASS)
 			return;
 		if(mWaypointList.containsKey(e.getBlock().getLocation())) {
-			if(!e.getPlayer().hasPermission("modepoints.use")) {
+			if(!e.getPlayer().hasPermission("modepoints.create")) {
 				e.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to destroy this waypoint.");
 				e.setCancelled(true);
 				return;
@@ -347,7 +347,7 @@ public class ModePoints extends JavaPlugin implements Listener {
 			return;
 		if(e.getLine(0).equalsIgnoreCase("[WAYPOINT]") ||
 				e.getLine(0).equalsIgnoreCase("-WAYPOINT-")) {
-			if(!e.getPlayer().hasPermission("modepoints.use")) {
+			if(!e.getPlayer().hasPermission("modepoints.create")) {
 				e.getPlayer().sendMessage(ChatColor.RED + "You do not have permission to create waypoints.");
 				e.setCancelled(true);
 				return;

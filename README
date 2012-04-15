@@ -52,6 +52,8 @@ PatPatrson - Quality Assurance Testing
 
 Changelog:
 
+4/15/12 - Added new permission node: modepoints.create
+
 3/18/12 - Removed the Vault dependency.
 
 3/18/12 - Initial commit. Mostly tested, should work fine.
